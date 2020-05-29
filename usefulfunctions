@@ -1,0 +1,53 @@
+def cabecalho(titulo):
+    print('-' * 40)
+    print(f'{titulo:^40}')
+    print('-' * 40)
+
+def linha():
+    print('-' * 40)
+
+def txtcor(texto, n):
+    cores = ['\033[m',#    0 reset da cor
+             '\033[30m',#  1 preto
+             '\033[31m',#  2 vermelho
+             '\033[32m',#  3 verde
+             '\033[33m',#  4 amarelo
+             '\033[34m',#  5 azul
+             '\033[35m',#  6 magenta
+             '\033[36m',#  7 cyan
+             '\033[37m',#  8 cinza claro
+             '\033[90m',#  9 cinza escuro
+             '\033[91m',# 10 vermelho claro
+             '\033[92m',# 11 verde claro
+             '\033[93m',# 12 amarelo claro
+             '\033[94m',# 13 azul claro
+             '\033[95m',# 14 magenta claro
+             '\033[96m',# 15 cyan claro
+             '\033[97m',# 16 branco
+             ]
+    return f'{cores[n]}{texto}{cores[0]}'
+
+def menu():
+    cabecalho('MENU PRINCIPAL')
+    print(f'1 - {txtcor("Ver pessoas cadastradas", 5)}\n2 - {txtcor("Cadastrar nova Pessoa", 5)}\n3 - {txtcor("Sair do sistema", 5)}')
+    linha()
+
+def menu2(lista):
+    cabecalho('MENU PRINCIPAL')
+    tam = len(lista)
+    for c in range(0, tam):
+        print(f'{c+1} - {lista[c]}')
+    linha()
+
+def cadastro(nome, idade):
+    tabela = []
+    cabecalho('NOVO CADASTRO')
+    tabela.append(nome)
+    tabela.append(idade)
+    return tabela
+
+
+def tabela(lista):
+    cabecalho('PESSOAS CADASTRADAS')
+    for c in range(0, len(lista)):
+        print(f'  {lista[c][0]:<27}  {lista[c][1]:>2} anos   ')
