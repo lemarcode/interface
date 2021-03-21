@@ -7,7 +7,7 @@ def linha():
     print('-' * 40)
 
 def txtcor(texto, n):
-    cores = ['\033[m',#    0 reset da cor
+    cores = ['\033[m',#    0 reset
              '\033[30m',#  1 preto
              '\033[31m',#  2 vermelho
              '\033[32m',#  3 verde
